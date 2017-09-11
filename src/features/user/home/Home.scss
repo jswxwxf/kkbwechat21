@@ -1,0 +1,38 @@
+#user-home {
+
+  #avatar {
+    padding: 20px;
+    position: relative;
+    color: white;
+    margin: 0;
+    padding: 30px;
+    > img:first-child {
+      height: 60px;
+      width: 60px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50px;
+      margin: 0 auto;
+      margin-bottom: 5px;
+    }
+    .button {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      padding: 0 20px;
+      > img {
+        height: 20px;
+        width: 20px;
+        margin-top: -2px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .list-block {
+    margin-top: 10px;
+  }
+
+}

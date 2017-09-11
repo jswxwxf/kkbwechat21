@@ -1,0 +1,19 @@
+#user-car {
+
+  padding-bottom: 20px;
+
+  .toolbar {
+    .toolbar-inner {
+      padding: 0;
+      .list-block {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  }
+
+  .list-block > ul > li > .item-content > .item-inner > .item-after {
+    padding-right: 20px;
+  }
+
+}

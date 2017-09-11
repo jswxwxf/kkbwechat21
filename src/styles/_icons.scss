@@ -1,0 +1,31 @@
+%lcb-icon {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.lcb-icon-home {
+  @extend %lcb-icon;
+  background-image: url("../assets/images/ico_home.png");
+}
+
+.lcb-icon-drive {
+  @extend %lcb-icon;
+  background-image: url("../assets/images/ico_drive.png");
+}
+
+.lcb-icon-credit {
+  @extend %lcb-icon;
+  background-image: url("../assets/images/ico_credit.png");
+}
+
+.lcb-icon-jobedu {
+  @extend %lcb-icon;
+  background-image: url("../assets/images/ico_jobedu.png");
+}
+
+.lcb-icon-social {
+  @extend %lcb-icon;
+  background-image: url("../assets/images/ico_social.png");
+}

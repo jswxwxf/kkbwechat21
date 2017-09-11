@@ -1,0 +1,17 @@
+@import "../../../styles/mixins";
+
+#insurance-eval {
+
+  @include lcb-placeholder();
+  @include lcb-input-align();
+
+  .list-block {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    .item-title {
+      width: 180px!important;
+    }
+  }
+
+}
+

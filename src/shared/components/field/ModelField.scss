@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+.lcb-model-field {
+
+  li:last-child:after {
+    @extend %lcb-field-border;
+  }
+  
+}

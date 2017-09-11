@@ -1,0 +1,20 @@
+$lcb-margin-vertical: 20px;
+$lcb-margin-horizontal: 10px;
+$lcb-border: 1px solid #ddd;
+$lcb-more-content-padding: 15px;
+
+%lcb-field-border {
+  content: '';
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  right: auto;
+  top: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #c8c7cc;
+  display: block;
+  z-index: 15;
+  transform-origin: 50% 100%;
+  transform: scaleY(0.5);
+}

@@ -1,0 +1,37 @@
+@import "../../../styles/mixins";
+
+#user-device {
+
+  .device-circle-text {
+    @include _lcb-circle-text(-3em, transparent, #ddd, 50%);
+  }
+
+  .row {
+    
+    margin: 10px;
+  
+    .card {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      .card-content {
+        .card-content-inner {
+          padding: 0;
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+      .card-footer {
+        justify-content: center;
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+  }
+
+
+}

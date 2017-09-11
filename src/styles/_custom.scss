@@ -1,0 +1,71 @@
+form .item-title {
+  width: 30%!important;
+}
+
+.navbar {
+  .navbar-inner {
+    .center {
+      position: absolute;
+      width: 100%;
+      justify-content: center;
+      z-index: -1000;
+    }
+  }
+}
+
+.list-block input[type="text"], .list-block input[type="password"], .list-block input[type="search"], .list-block input[type="email"], .list-block input[type="tel"], .list-block input[type="url"], .list-block input[type="date"], .list-block input[type="datetime-local"], .list-block input[type="time"], .list-block input[type="number"], .list-block select, .list-block textarea {
+  font-size: 15px;
+}
+
+.list-block .item-after {
+  font-size: 15px;
+}
+
+.list-block .item-divider {
+  min-height: 20px;
+  height: auto;
+  background-color: #efeff4;
+  span {
+    line-height: 40px;
+    font-size: 14px;
+  }
+}
+
+.smart-select-picker  {
+  .toolbar-inner {
+    font-weight: 200;
+  }
+  .item-inner {
+    .item-title {
+      font-size: 15px;
+    }
+  }
+}
+
+.picker-modal {
+  .picker-items {
+    .picker-item {
+      font-size: 18px;
+    }
+  }
+}
+
+/* Your app custom files in this file */
+.view-left {
+  border-right: 1px solid #b2b2b2;
+}
+
+/* iPad Vertical */
+@media (min-width: 640px) {
+  .panel.panel-left.panel-cover {
+    width: 320px;
+  }
+  /* Let's hide panel-opener when left panel is visible */
+  .view-main .navbar .open-panel {
+    display: none;
+  }
+  .view-main {
+    margin-left: 321px;
+    width: calc(100% - 321px);
+  }
+}

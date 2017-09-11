@@ -1,0 +1,17 @@
+.lcb-car-switch {
+  &.lcb-car-switch-link {
+    ul {
+      background-color: transparent;
+      .item-inner {
+        padding-right: 10px;
+        background-image: none;
+        .item-title {
+          color: #007aff;
+        }
+        .item-after {
+          display: none;
+        }
+      }
+    }
+  }
+}

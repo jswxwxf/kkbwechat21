@@ -1,0 +1,72 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.red {
+  color: red;
+}
+
+#welcome {
+
+  #actions {
+    margin-top: -5px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    img {
+      width: 80%;
+      padding-right: 15px;
+      margin: 10px 0;
+      border-right: $lcb-border;
+    }
+    span {
+      padding-right: 15px;
+      @include small-screen() {
+        font-size: 12px;
+      }
+    }
+    .col-auto:last-child img {
+      border-right: none;
+    }
+  }
+
+  #insureance {
+    &.list-block {
+      margin: 15px auto;
+    }
+    .item-content {
+      border-bottom: $lcb-border;
+      .item-media {
+        img {
+          width: 13vh;
+        }
+      }
+      .button {
+        position: absolute;
+        right: 15px;
+        top: 40%;
+      }
+      .item-inner {
+        &::after {
+          height: 0;
+        }
+        padding-top: 20px;
+        .item-title-row {
+          padding-bottom: 5px;
+        }
+        .item-title {
+          font-size: 18px;
+          font-weight: normal;
+          sup {
+            font-weight: normal;
+            font-size: 13px;
+            color: red;
+            top: -0.4em;
+          }
+        }
+        .item-text {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  
+}

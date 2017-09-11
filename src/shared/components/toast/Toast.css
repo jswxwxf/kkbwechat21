@@ -1,0 +1,106 @@
+.toast,
+.toast-backdrop,
+.toast-dialog {
+    right: 25px;
+    bottom: 25px;
+    left: 25px;
+}
+.toast {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    /* top: 0; */
+    z-index: 10901;
+    -webkit-overflow-scrolling: touch;
+    outline: 0
+}
+.toast.fade .toast-dialog {
+    -webkit-transform: translate(0, 25%);
+    -ms-transform: translate(0, 25%);
+    -o-transform: translate(0, 25%);
+    transform: translate(0, 25%);
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -moz-transition: -moz-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out
+}
+.toast.in .toast-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0)
+}
+.toast-open .toast {
+    overflow-x: hidden;
+    overflow-y: hidden
+}
+.toast-dialog {
+    position: fixed;
+    width: auto;
+    margin: 10px
+}
+.toast-content {
+    position: relative;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .75);
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .8);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    background-clip: padding-box;
+    text-align: center;
+    outline: 0
+}
+.toast-backdrop {
+    position: fixed;
+    /* top: 0; */
+    z-index: 10801;
+    background-color: transparent
+}
+.toast-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+.toast-backdrop.in {
+    opacity: .5;
+    filter: alpha(opacity=50)
+}
+.toast-body {
+    position: relative;
+    padding: 15px
+}
+.toast-scrollbar-measure {
+    position: absolute;
+    top: -9999px;
+    width: 50px;
+    height: 50px;
+    overflow: scroll
+}
+@media (min-width: 768px) {
+    .toast-dialog {
+        width: 300px;
+        margin: 30px auto
+    }
+    .toast-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+    }
+    .toast-sm {
+        width: 150px
+    }
+}
+@media (min-width: 992px) {
+    .toast-lg {
+        width: 600px
+    }
+}
+.toast-round .toast-content {
+    border-radius: 25.5px
+}
+.toast-square .toast-content {
+    border-radius: 0
+}
+.toast-default .toast-content {
+    border-radius: 6px
+}

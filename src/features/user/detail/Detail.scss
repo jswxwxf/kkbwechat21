@@ -1,0 +1,33 @@
+#user-detail {
+
+  .tabbar-labels {
+    top: 44px;
+    height: 80px;
+    .toolbar-inner {
+      padding: 0;
+      .active {
+        padding-bottom: 8px;
+        border-bottom: 2px solid blue;
+      }
+      a {
+        padding-top: 13px;
+        padding-bottom: 10px;
+        .icon {
+          width: 33px;
+          height: 33px;
+        }
+        span {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .page-content {
+    padding-top: 124px;
+    .list-block {
+      margin: 0;
+    }
+  }
+
+}

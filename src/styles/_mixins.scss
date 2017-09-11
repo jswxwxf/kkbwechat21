@@ -1,0 +1,89 @@
+@import "../../node_modules/sass-mediaqueries/media-queries";
+
+@mixin middle-screen() {
+  @include screen(321px, 640px) {
+    @content;
+  }
+}
+
+@mixin small-screen() {
+  @include max-screen(320px) {
+    @content;
+  }
+}
+
+@mixin not-small-screen() {
+  @include min-screen(321px) {
+    @content;
+  }
+}
+
+@mixin lcb-placeholder($direction: rtl) {
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    direction: $direction;
+    font-size: 15px;
+    color: #8e8e93;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    direction: $direction;
+    font-size: 15px;
+    color: #8e8e93;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ but I'm not sure about working */
+    direction: $direction;
+    font-size: 15px;
+    color: #8e8e93;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+    direction: $direction;
+    font-size: 15px;
+    color: #8e8e93;
+  }
+}
+
+@mixin lcb-input-align($direction: right) {
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  select {
+    text-align: $direction;
+  }
+}
+
+@mixin _lcb-circle-text($text-margin-top: -0.5em, $color: blue, $border-color: transparent, $width: 30%, $center: true) {
+  width: $width;
+  @if $center {
+    margin: 0 auto;
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background: $color;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+  }
+  div {
+    float: left;
+    width: 100%;
+    padding-top: 50%;
+    line-height: 1em;
+    margin-top: $text-margin-top;
+    text-align: center;
+    color: white;
+  }
+}

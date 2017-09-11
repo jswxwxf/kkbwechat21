@@ -1,0 +1,20 @@
+@import '../../../styles/variables';
+
+.lcb-input-field {
+ 
+ .item-divider {
+    // color: red;
+    text-align: center;
+    border-top: 1px solid red;
+    font-size: 14px;
+    // font-weight: 200;
+    span {
+      line-height: 12px;
+     }
+  }
+
+  li:last-child:after {
+    @extend %lcb-field-border;
+  }
+
+}

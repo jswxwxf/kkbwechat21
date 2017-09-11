@@ -1,0 +1,97 @@
+@import "../../../styles/mixins";
+
+#insurance-eval-result {
+
+}
+
+.lcb-insurance-eval-result + .popup {
+
+  @include not-small-screen() {
+    width: 90%;
+    height: 450px;
+    left: 50%;
+    top: 50%;
+    margin-left: -45%;
+    margin-top: -300px;
+  }
+
+  .navbar {
+    background: #30c34d;
+    color: white;
+    a {
+      color: white;
+    }
+  }
+
+  .toolbar {
+    background: #30c34d;
+    .button {
+      border: none;
+    }
+  }
+
+  .page-content {
+    
+    padding-top: 44px;
+    background-color: #30c34d;
+
+    h2 {
+      color: white;
+    }
+    
+    #save {
+      padding-top: 5px;
+      text-align: center;
+      > div {
+        margin: 0 auto;
+        font-size: 20pt;
+        line-height: 100px;
+        height: 100px;
+        width: 100px;
+        background-image: url("../../../assets/images/white_circle.png");
+        background-size: contain;
+      }
+    }
+
+    #compare {
+      padding: 8px;
+      margin-top: 20px;
+      background-color: #ffffff;
+      table {
+        width: 100%;
+        th {
+          text-align: right;
+          width: 55px;
+          vertical-align: middle;
+          font-size: 12pt;
+          font-weight: bold;
+          position: relative;
+          top: -2px;
+        }
+        td {
+          padding: 5px;
+          padding-left: 15px;
+          vertical-align: middle;
+          .lcb-progress-bar {
+            display: inline-block;
+            width: 100%;
+          }
+        }
+        tr > td:last-child {
+          width: 50px;
+          position: relative;
+          top: -2px;
+        }
+      }
+    }
+
+    .progressbar {
+      height: 10px;
+      border-radius: 5px;
+      background: #eee;
+      margin: 5px 0;
+    }
+  
+  }
+
+}
