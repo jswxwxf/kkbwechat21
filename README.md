@@ -2,15 +2,15 @@
 
 主要使用了以下的框架和库：
 
-- Reactjs
-- Framework7-React
-- Mobx + Mobx-react
-- Reflux
-- formstate + validatorjs
-- axios
+- [Reactjs](https://facebook.github.io/react/)
+- [Framework7-React](http://framework7.io/react/)
+- [Mobx](https://github.com/mobxjs/mobx) + [Mobx-react](https://github.com/mobxjs/mobx-react)
+- [Reflux](https://github.com/reflux/refluxjs)
+- [formstate](https://github.com/formstate/formstate) + [validatorjs](https://github.com/skaterdav85/validatorjs)
+- [axios](https://github.com/mzabriskie/axios)
 - 其他的一些库如 lodash, momentjs 等。
 
-这个项目是用 facebook 的 create-react-app 创建的，运行程序使用
+这个项目是用 facebook 的 [create-react-app](https://github.com/facebookincubator/create-react-app) 创建的，运行程序使用
 
     npm start
 
