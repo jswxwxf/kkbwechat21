@@ -5,4 +5,5 @@ export default Reflux.createActions([
   'getBrands',
   'getSeries',
   'getModels',
+  'getRegions',
 ]);

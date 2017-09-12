@@ -9,6 +9,7 @@ import {
 import { inject, observer } from 'mobx-react';
 
 import Header from 'features/welcome/Header';
+
 import { CarSwitch } from 'shared/components';
 import { Pipe as P } from 'shared/utility';
 import { carActions } from 'shared/actions';

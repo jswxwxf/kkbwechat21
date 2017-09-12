@@ -43,15 +43,15 @@ export default class UtilService {
   }
 
   goto(page, query = {}) {
-    this._goto(page);
+    this._goto({
+      url: page,
+      query
+    });
   }
 
   _goto(page) {
     console.log('loading...', page);
-    this.f7App.mainView.router.load({
-      ...page,
-      reload: true
-    });
+    this.f7App.mainView.router.load(page);
   }
 
   refreshPage() {

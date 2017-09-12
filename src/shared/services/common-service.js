@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import BaseService from './base-service';
 
 var oils = [
@@ -31,7 +29,7 @@ export default class CommonService extends BaseService {
   }
 
   getRegions() {
-    return _.memoize(this._get('/2.0/regions'));
+    return this._get('/2.0/regions');
   }
 
   getInquiryCities() {

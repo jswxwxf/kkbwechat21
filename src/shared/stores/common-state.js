@@ -10,6 +10,8 @@ export default class CommonState {
 
   @observable _models = observable(null);
 
+  @observable _regions = observable(null);
+
   @computed get oils() {
     return this._oils.get();
   }
@@ -40,6 +42,14 @@ export default class CommonState {
 
   set models(models) {
     this._models.set(models);
+  }
+
+  @computed get regions() {
+    return this._regions.get();
+  }
+
+  set regions(regions) {
+    this._regions.set(regions);
   }
 
 }

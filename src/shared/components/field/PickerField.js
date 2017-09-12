@@ -102,17 +102,15 @@ export default class PickerField extends Component {
     const { label } = this.props;
     const { placeholder } = this.state;
     return (
-      <li>
-        <ListItem
-          className="lcb-picker-field"
-          link="#">
+      <span className="lcb-picker-field">
+        <ListItem link="#">
           <FormLabel>{label}</FormLabel>
           <FormInput type="text" placeholder={placeholder}
             onClick={this.handleClick} />
         </ListItem>
         {this.states[0].hasError &&
           <ListItem title={this.states[0].error} divider />}
-      </li>
+      </span>
     );
   }
 

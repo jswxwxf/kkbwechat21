@@ -6,6 +6,7 @@ import UserService from './user-service';
 import CarService from './car-service';
 import DeviceService from './device-service';
 import InsuranceService from './insurance-service';
+import InquiryService from './inquiry-service';
 
 export {
   UtilService,
@@ -15,5 +16,6 @@ export {
   UserService,
   CarService,
   DeviceService,
-  InsuranceService
+  InsuranceService,
+  InquiryService,
 };

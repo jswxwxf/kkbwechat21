@@ -1,3 +1,30 @@
+@import "../../../styles/mixins";
+
 #insurance-inquiry-basic {
+
+  @include lcb-placeholder();
+  @include lcb-input-align();
+ 
+  padding-bottom: 35px;
+
+  .toolbar {
+    height: 44px;
+    .toolbar-inner {
+      padding: 0;
+      .button {
+        border-radius: 0;
+      }
+    }
+  }
+
+  #hint {
+    font-size: 11pt;
+    line-height: 20pt;
+    .icon.fa {
+      margin-top: -5px;
+      margin-right: 5px;
+    }
+  }
   
+
 }

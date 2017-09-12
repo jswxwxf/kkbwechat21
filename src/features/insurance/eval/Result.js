@@ -33,7 +33,7 @@ export default class Result extends Component {
         </Navbar>
         <h2 className="text-center">开开保为您节省</h2>
         <div id="save" className="text-center">
-          <div>{result.pct_save}</div>
+          <div>{result.pct_save}%</div>
         </div>
         <div id="compare">
           <table>
@@ -57,7 +57,7 @@ export default class Result extends Component {
           </table>
         </div>
         <Toolbar className="lcb-toolbar-button">
-          <Button big color="white" text="立刻精确报价" />
+          <Button big color="white" text="立刻精确报价" href="/order/inquiry/basic" onClick={() => dialog.hide()} />
         </Toolbar>
       </Page>
     );

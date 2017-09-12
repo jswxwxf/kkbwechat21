@@ -27,6 +27,10 @@ Validator.register('licenseNumber', function (value, requirement, attribute) {
   return Validators.isLicenseNumber(value);
 }, '请输入正确格式的:attribute，如：沪A98981.');
 
+Validator.register('idCard', function (value, requirement, attribute) {
+  return Validators.isIdCard(value);
+}, '请输入正确格式的:attribute号.');
+
 
 export class Validators {
 

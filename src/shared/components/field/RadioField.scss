@@ -1,0 +1,34 @@
+@import "../../../styles/variables";
+
+.lcb-radio-field {
+
+  input[type="checkbox"]:checked + .item-media  {
+    i.color-red  {
+      background-color: red!important;
+    }
+  }
+
+  .list-block {
+    .item-content {
+      .item-media {
+        padding-right: 15px;
+        &:after {
+          @extend %lcb-field-border;
+        }
+      }
+    }
+  }
+
+  .item-divider {
+    // color: red;
+    text-align: center;
+    border-top: 1px solid red;
+    background-color: white;
+    font-size: 14px;
+    // font-weight: 200;
+    span {
+      line-height: 12px;
+    }
+  }
+
+}

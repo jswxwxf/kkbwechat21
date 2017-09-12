@@ -38,4 +38,10 @@ export default class CommonStore extends Store {
     CommonStore.commonState.models = resp.data.data;
   }
 
+  async onGetRegions() {
+    this.utilService.showSpinner();
+    let resp = await this.commonService.getRegions();
+    CommonStore.commonState.regions = resp.data.data;
+  }
+
 }

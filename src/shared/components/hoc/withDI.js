@@ -14,6 +14,7 @@ import {
   CarStore,
   DeviceStore,
   InsuranceStore,
+  InquiryStore,
 } from 'shared/stores';
 
 import {
@@ -24,6 +25,7 @@ import {
   CarService,
   DeviceService,
   InsuranceService,
+  InquiryService,
 } from 'shared/services';
 
 const storeService = new StoreService();
@@ -33,6 +35,7 @@ const userService = new UserService(); userService.storeService = storeService;
 const carService = new CarService(); carService.storeService = storeService; carService.userService = userService;
 const deviceService = new DeviceService(); deviceService.storeService = storeService; deviceService.carService = carService;
 const insuranceService = new InsuranceService(); insuranceService.storeService = storeService;
+const inquiryService = new InquiryService(); inquiryService.storeService = storeService;
 
 const appStore = Reflux.initStore(AppStore); appStore.utilService = utilService; appStore.userService = userService;
 const commonStore = Reflux.initStore(CommonStore); commonStore.utilService = utilService; commonStore.commonService = commonService;
@@ -40,6 +43,7 @@ const userStore = Reflux.initStore(UserStore); userStore.utilService = utilServi
 const carStore = Reflux.initStore(CarStore); carStore.utilService = utilService; carStore.carService = carService;
 const deviceStore = Reflux.initStore(DeviceStore); deviceStore.utilService = utilService; deviceStore.deviceService = deviceService;
 const insuranceStore = Reflux.initStore(InsuranceStore); insuranceStore.utilService = utilService; insuranceStore.insuranceService = insuranceService;
+const inquiryStore = Reflux.initStore(InquiryStore); inquiryStore.utilService = utilService; inquiryStore.inquiryService = inquiryService;
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
