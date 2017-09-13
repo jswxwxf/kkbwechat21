@@ -1,0 +1,32 @@
+#insurance-inquiry-insurance {
+
+  .lcb-border-bottom {
+    .item-inner:after {
+      height: 0;
+    }
+  }
+
+  .lcb-radio-field {
+    .list-block {
+      margin: 0;
+    }
+    & + .list-block {
+      margin-top: -1px;
+    }
+  }
+
+  .toolbar {
+    height: 44px;
+    .toolbar-inner {
+      padding: 0;
+      .button {
+        border-radius: 0;
+      }
+    }
+  }
+
+  .content-block:last-child {
+    padding-bottom: 70px;
+  }
+
+}

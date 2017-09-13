@@ -1,0 +1,56 @@
+.lcb-company-field {
+
+  .row {
+    width: 93%;
+    margin: 0 auto;
+    padding-top: 5px;
+  }
+
+  .col-33 {
+    width: 32.5%!important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .lcb-company-selector {
+      width: 100%;
+    }
+  }
+
+  .lcb-company-logo {
+    position: relative;
+    .lcb-company-recommend {
+      width: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+
+  .lcb-company-logo- {
+    &picc {
+      background-image: url('../../../assets/images/ico_p12x.png');
+    }
+    &clpc {
+      background-image: url('../../../assets/images/ico_p22x.png');
+    }
+    &pingan {
+      background-image: url('../../../assets/images/ico_p32x.png');
+    }
+    &cpic {
+      background-image: url('../../../assets/images/ico_p42x.png');
+    }
+    &taiping {
+      background-image: url('../../../assets/images/ico_p52x.png');
+    }
+    &zking {
+      background-image: url('../../../assets/images/ico_p62x.png');
+    }
+    &continent {
+      background-image: url('../../../assets/images/ico_p72x.png');
+    }
+    &axa {
+      background-image: url('../../../assets/images/ico_p82x.png');
+    }
+  }
+
+}

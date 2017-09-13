@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
+import _ from 'lodash';
 
 import './RadioField.scss';
 
@@ -8,13 +9,15 @@ import './RadioField.scss';
 export default class RadioField extends Component {
 
   static propTypes = {
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string,
     color: PropTypes.string,
     state: PropTypes.object
   }
 
   static defaultProps = {
-    state: {}
+    state: {
+      onChange: _.noop
+    }
   }
 
   el;
@@ -36,28 +39,23 @@ export default class RadioField extends Component {
     /* eslint-disable */
     return (
       <span className="lcb-radio-field" ref={r => this.el = r}>
-        <div className="content-block-title">{label}</div>
-        <div className="list-block">
-          <ul>
-            {React.Children.map(options, (option) => <li>
-              <label className="label-checkbox item-content">
-                <div className="item-inner">
-                  <div className="item-title">{option.props.children}</div>
-                </div>
-                <input type="checkbox"
-                  value={option.props.value}
-                  checked={option.props.value == state.value}
-                  onChange={this.handleChange} />
-                <div className="item-media">
-                  <i className={`color-${color} icon icon-form-checkbox`}></i>
-                </div>
-              </label>
-            </li>
-            )}
-            {state.hasError &&
-              <li className="item-divider"><span>{state.error}</span></li>}
-          </ul>
-        </div>
+        {React.Children.map(options, (option) => <li>
+          <label className="label-checkbox item-content">
+            <div className="item-inner">
+              <div className="item-title">{option.props.children}</div>
+            </div>
+            <input type="checkbox"
+              value={option.props.value}
+              checked={option.props.value == state.value}
+              onChange={this.handleChange} />
+            <div className="item-media">
+              <i className={`color-${color} icon icon-form-checkbox`}></i>
+            </div>
+          </label>
+        </li>
+        )}
+        {state.hasError &&
+          <li className="item-divider"><span>{state.error}</span></li>}
       </span>
     );
   }

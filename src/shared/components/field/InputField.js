@@ -28,7 +28,7 @@ export default class InputField extends Component {
   }
 
   render() {
-    const { label, placeholder, readonly, type, state, rightSlot } = this.props;
+    const { label, placeholder, readonly, type, state, rightSlot, disabled, ...otherProps } = this.props;
     if (readonly) {
       return (
         <span className="lcb-input-field">
@@ -40,9 +40,9 @@ export default class InputField extends Component {
     }
     return (
       <span className="lcb-input-field">
-        <ListItem>
+        <ListItem {...otherProps}>
           <FormLabel>{label}</FormLabel>
-          <FormInput type={type} placeholder={placeholder} value={state.value} onInput={state.onChange} />
+          <FormInput type={type} placeholder={placeholder} value={state.value} onInput={state.onChange} disabled={disabled} />
           {rightSlot}
         </ListItem>
         {state.hasError &&

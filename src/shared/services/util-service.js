@@ -9,6 +9,12 @@ export default class UtilService {
 
   storeService;
 
+  static _instance;
+
+  constructor() {
+    UtilService._instance = this;
+  }
+
   showSpinner(message) {
     if (!this.f7App) return;
     if (message) {

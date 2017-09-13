@@ -1,11 +1,20 @@
 import { FormState, FieldState } from 'formstate';
 
+import { PackageFieldForm } from 'shared/components';
 import { validate } from 'shared/utility';
-// import { insuranceActions } from 'shared/actions';
+import { inquiryActions } from 'shared/actions';
 
 export default class InquiryForm {
 
   static _instance;
+
+  companies = [
+    { company_id: "clpc", company: "中国人寿财险", discount: 20.24 },
+    { company_id: "cpic", company: "太平洋保险", discount: 17.48 },
+    { company_id: "pingan", company: "中国平安", discount: 17.48 },
+    { company_id: "taiping", company: "中国太平", discount: 15.64 },
+    { company_id: "picc", company: "中国人保财险", discount: 14.72 }
+  ]
 
   constructor() {
     InquiryForm._instance = this;
@@ -17,17 +26,19 @@ export default class InquiryForm {
   idCard = new FieldState('').validators((val) => validate('身份证', val, 'required|idCard'));
   productId = new FieldState('').validators((val) => validate('产品', val, 'required'));
 
-  form = new FormState({
-    basic: new FormState({
-      city: this.city,
-      licenseNo: this.licenseNo,
-      name: this.name,
-      idCard: this.idCard,
-      productId: this.productId,
-    })
+  basicForm = new FormState({
+    city: this.city,
+    licenseNo: this.licenseNo,
+    name: this.name,
+    idCard: this.idCard,
+    productId: this.productId,
   });
 
-  toJson() {
+  insuranceForm = new FormState({
+    package: new PackageFieldForm({}).form
+  });
+
+  toJson(part) {
     return {
       city: this.city.$,
       license_no: this.licenseNo.$,
@@ -37,8 +48,18 @@ export default class InquiryForm {
     }
   }
 
-  handleBasic = async() => {
-    const res = await this.form.$.basic.validate();
+  handleBasic = async () => {
+    const res = await this.basicForm.validate();
+    if (res.hasError) return;
+    inquiryActions.inquiryBasic(this.toJson());
+  }
+
+  handleMore = async () => {
+    inquiryActions.inquiryMore(this.toJson());
+  }
+
+  handleInsurance = async () => {
+    const res = await this.insuranceForm.validate();
     if (res.hasError) return false;
     return true;
   }

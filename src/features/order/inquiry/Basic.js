@@ -4,6 +4,7 @@ import {
   Page,
   List,
   ContentBlock,
+  ContentBlockTitle,
   Button,
   Icon,
   Toolbar,
@@ -43,11 +44,6 @@ export default class Basic extends Component {
     inquiryActions.getProducts(city);
   }
 
-  handleSubmit = async () => {
-    if (!await this.form.handleBasic()) return;
-    this.utilService.goto('/order/inquiry/more');
-  }
-
   render() {
     let { productsForCity } = this.state;
     if (!productsForCity) return <Page />;
@@ -62,11 +58,14 @@ export default class Basic extends Component {
           <InputField label="姓　名" placeholder="请填写姓名" state={this.form.name} />
           <InputField label="身份证" placeholder="请填写身份证" state={this.form.idCard} />
         </List>
-        <RadioField label="请选择车险产品" color="red" state={this.form.productId}>
-          <select>
-            {productsForCity.products.map(product => <option key={product.product_id} value={product.product_id}>{product.product}</option>)}
-          </select>
-        </RadioField>
+        <ContentBlockTitle>请选择车险产品</ContentBlockTitle>
+        <List>
+          <RadioField label="请选择车险产品" color="red" state={this.form.productId}>
+            <select>
+              {productsForCity.products.map(product => <option key={product.product_id} value={product.product_id}>{product.product}</option>)}
+            </select>
+          </RadioField>
+        </List>
         <ContentBlock id="hint">
           温馨提示<br />
           <Icon fa="caret-up" size="22px" color="red" /><span>交强险/车船税可提前{productsForCity.compulsory_forward}天投保</span><br />
@@ -76,7 +75,7 @@ export default class Basic extends Component {
         <Toolbar className="lcb-toolbar-button">
           <ButtonsSegmented>
             <Button big color="red" text="历史报价" />
-            <Button big fill color="red" text="新建报价" onClick={this.handleSubmit} />
+            <Button big fill color="red" text="新建报价" onClick={this.form.handleBasic} />
           </ButtonsSegmented>
         </Toolbar>
       </Page>

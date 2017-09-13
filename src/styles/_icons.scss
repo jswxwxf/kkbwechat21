@@ -29,3 +29,8 @@
   @extend %lcb-icon;
   background-image: url("../assets/images/ico_social.png");
 }
+
+.lcb-icon-hint {
+  @extend %lcb-icon;
+  background-image: url("../assets/images/ico_hint.png");
+}

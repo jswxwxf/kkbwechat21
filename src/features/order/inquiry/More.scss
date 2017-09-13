@@ -1,4 +1,57 @@
+@import '../../../styles/variables';
+@import "../../../styles/mixins";
+
 #insurance-inquiry-more {
+
+  @include lcb-placeholder();
+  @include lcb-input-align();
+
+  .lcb-icon-hint {
+    margin-top: -5px;
+    margin-right: 5px;
+  }
+
+  .item-title {
+    overflow: visible;
+  }
+
+  .list-block {
+    margin-top: 15px;
+  }
+
+  .content-block:last-child {
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+
+  .lcb-strike-through {
+    text-align: center;
+    font-weight: 200;
+    position: relative;
+    span {
+      display: inline-block;
+      background-color:#efeff4;
+      width: 70px;
+      margin-left: -15px;
+    }
+    &:after {
+      @extend %lcb-field-border;
+      top: 10px;
+      left: -5px;
+      right: 0;
+      height: 5px;
+      width: 97%;
+      z-index: -1;
+    }
+  }
+
+  #photos {
+    padding-bottom: 5px;
+    // img {
+    //   height: 115px;
+    // }
+  }
+
   .toolbar {
     height: 44px;
     .toolbar-inner {
@@ -8,4 +61,5 @@
       }
     }
   }
+
 }

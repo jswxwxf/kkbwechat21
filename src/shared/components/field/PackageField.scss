@@ -1,0 +1,32 @@
+.lcb-package-field {
+  
+  .item-title {
+    font-size: 16px;
+  }
+
+  .lcb-select-field[data-value="true"] {
+    .item-after {
+      color: blue;
+    }
+  }
+
+  // .lcb-select-field[data-value="false"] {
+  //   .item-after {
+  //     color: red;
+  //   }
+  // }
+
+  .item-divider {
+    // color: red;
+    text-align: center;
+    border-top: 1px solid red;
+    background-color: white;
+    font-size: 14px;
+    // font-weight: 200;
+    span {
+      line-height: 12px;
+    }
+  }
+
+
+}

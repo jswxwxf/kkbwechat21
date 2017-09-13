@@ -16,7 +16,7 @@ export default class InquiryService extends BaseService {
   inquiryMore(inquiry) {
     return this._post(`/2.0/quote/more`, {
       product_id: inquiry.product_id,
-      city_id: inquiry.city.code,
+      city_id: inquiry.city,
       license_no: inquiry.license_no
     })
   }

@@ -17,6 +17,7 @@ import $ from 'jquery';
 
 // styles
 import 'framework7/dist/css/framework7.ios.css';
+import 'framework7/dist/css/framework7.material.colors.css'
 import 'framework7/dist/css/framework7.ios.colors.css'
 import './styles/global.scss'
 import './index.css';

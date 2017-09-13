@@ -64,6 +64,14 @@ export default class SelectField extends Component {
     return placeholder;
   }
 
+  resolveFalse(value) {
+    /* eslint-disable */
+    if (value == "false") return false;
+    if (value == 0) return false;
+    /* eslint-enable */
+    return true;
+  }
+
   render() {
     const { label, searchable, pageTitle, state } = this.props;
     let options = this.props.children.props.children;
@@ -75,7 +83,7 @@ export default class SelectField extends Component {
     } : undefined;
     // console.log('state.value: ', state.value);
     return (
-      <span className="lcb-select-field" ref={r => this.container = r}>
+      <span className="lcb-select-field" data-value={this.resolveFalse(state.value)} ref={r => this.container = r}>
         <ListItem title={label} after={placeholder}
           smartSelect
           smartSelectOpenIn="picker"
