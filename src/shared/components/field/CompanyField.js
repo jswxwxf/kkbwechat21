@@ -27,12 +27,12 @@ export default class CompanyField extends Component {
     const { companies } = this.props;
     const l = companies.length > 3 ? (3 - companies.length / 3) : 0;
     let fillups = [];
-    for (let i = 0; i < l; i++) fillups.push(<GridCol width="33"></GridCol>);
+    for (let i = 0; i < l; i++) fillups.push(<GridCol key={i} width="33"></GridCol>);
     return (
       <span className="lcb-company-field">
         <GridRow noGutter>
           {companies.map((company, i) => (
-            <GridCol width="33" className={`lcb-company-logo lcb-company-logo-${company.company_id}`}>
+            <GridCol key={company.company_id} width="33" className={`lcb-company-logo lcb-company-logo-${company.company_id}`}>
               <img src={`${require('assets/images/ico_p_on2x.png')}`} alt="" className="lcb-company-selector lcb-invisible" />
               {i === 0 && <img src={`${require('assets/images/flag_recommend.png')}`} alt="recommand" className="lcb-company-recommend" />}
             </GridCol>
