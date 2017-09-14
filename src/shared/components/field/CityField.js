@@ -41,6 +41,8 @@ export default class CityField extends Component {
   oldValue;
   initialized = false;
 
+  container;
+
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -52,6 +54,8 @@ export default class CityField extends Component {
   }
 
   componentDidMount() {
+    const $container = window.Dom7(this.container);
+    $container.find('input').attr('readonly', true);
     when(
       () => CommonStore.commonState.regions != null,
       () => this.renderRegions()
@@ -144,7 +148,7 @@ export default class CityField extends Component {
     const { label, state } = this.props;
     const { placeholder, value } = this.state;
     return (
-      <span className="lcb-city-field">
+      <span className="lcb-city-field" ref={r => this.container = r}>
         <ListItem
           link="#">
           <FormLabel>{label}</FormLabel>

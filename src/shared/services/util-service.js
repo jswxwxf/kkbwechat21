@@ -56,7 +56,7 @@ export default class UtilService {
   }
 
   _goto(page) {
-    console.log('loading...', page);
+    // console.log('loading...', page);
     this.f7App.mainView.router.load(page);
   }
 

@@ -6,11 +6,14 @@
   @include lcb-placeholder();
   @include lcb-input-align();
   
-  .item-inner {
-    .item-input {
-      input {
-        font-size: 15px;
-        color: #8e8e93;
+  li {
+    overflow: hidden;
+    .item-inner {
+      .item-input {
+        input {
+          font-size: 15px;
+          color: #8e8e93;
+        }
       }
     }
   }

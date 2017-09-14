@@ -38,11 +38,14 @@ class App extends Component {
     });
   }
 
+  handlePageAfterAnimation = (app, page) => {
+    app.sizeNavbars('.view-main')
+  }
+
   handleRouteChange = (route) => {
     this.utilService.hideSpinner();
     this.utilService.rememberState(route);
   }
-
   render() {
     return (
       <Framework7App
@@ -51,7 +54,9 @@ class App extends Component {
         pushState={true}
         panelLeftBreakpoint={640}
         pushStateSeparator="#"
+        cache={false}
         swipeBackPage={false}
+        onPageAfterAnimation={this.handlePageAfterAnimation}
         onRouteChange={this.handleRouteChange}>
         <Statusbar />
         <Menu />

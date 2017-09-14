@@ -30,9 +30,9 @@ export default class SelectField extends Component {
   container;
 
   componentDidMount() {
-    if (!this.props.pickerHeight) return;
-    let $link = window.Dom7(this.container).find('a');
-    $link[0].dataset.pickerHeight = this.props.pickerHeight;
+    // if (!this.props.pickerHeight) return;
+    // let $link = window.Dom7(this.container).find('a');
+    // $link[0].dataset.pickerHeight = this.props.pickerHeight;
   }
 
   handleChange = (e) => {

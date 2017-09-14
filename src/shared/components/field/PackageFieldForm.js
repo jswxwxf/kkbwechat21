@@ -1,5 +1,4 @@
 import { FormState, FieldState } from 'formstate';
-import { UtilService } from 'shared/services';
 import _ from 'lodash';
 
 export default class PackageFieldForm {
@@ -33,11 +32,21 @@ export default class PackageFieldForm {
       escape: this.escape,
       excluding: this.excluding
     }).validators(($) => {
-      if (!this.isValid($)) {
-        UtilService._instance.toast('请选择险种组合');
-        return '';
-      }
+      if (!this.isValid($)) return '请选择险种组合';
+      // if (!this.isValid($)) {
+      //   UtilService._instance.toast('请选择险种组合');
+      //   return '';
+      // }
     });
+
+    _.forEach(this.form.$, (field, k) => {
+      field.$mobx.observe(change => {
+        if (change.type === 'update' && change.name === 'value') {
+          console.log('validating form');
+          this.form.validate();
+        }
+      });
+    })
 
   }
 

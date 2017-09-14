@@ -8,11 +8,14 @@
     }
   }
 
-  .item-content {
-    .item-media {
-      padding-right: 15px;
-      &:after {
-        @extend %lcb-field-border;
+  li {
+    overflow: hidden;
+    .item-content {
+      .item-media {
+        padding-right: 15px;
+        &:after {
+          @extend %lcb-field-border;
+        }
       }
     }
   }

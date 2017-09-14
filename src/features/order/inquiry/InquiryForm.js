@@ -1,7 +1,8 @@
 import { FormState, FieldState } from 'formstate';
+import _ from 'lodash';
 
 import { PackageFieldForm } from 'shared/components';
-import { validate } from 'shared/utility';
+import { validate, Utils } from 'shared/utility';
 import { inquiryActions } from 'shared/actions';
 
 export default class InquiryForm {
@@ -25,6 +26,7 @@ export default class InquiryForm {
   name = new FieldState('').validators((val) => validate('姓名', val, 'required'));
   idCard = new FieldState('').validators((val) => validate('身份证', val, 'required|idCard'));
   productId = new FieldState('').validators((val) => validate('产品', val, 'required'));
+  companyId = new FieldState('').validators((val) => validate('保险公司', val, 'required'));
 
   basicForm = new FormState({
     city: this.city,
@@ -35,17 +37,20 @@ export default class InquiryForm {
   });
 
   insuranceForm = new FormState({
+    companyId: this.companyId,
     package: new PackageFieldForm({}).form
   });
 
-  toJson(part) {
-    return {
+  toJson() {
+    let result = {
       city: this.city.$,
       license_no: this.licenseNo.$,
       name: this.name.$,
       id_card: this.idCard.$,
       product_id: this.productId.$,
-    }
+      company_id: this.companyId.$
+    };
+    return _.omitBy(result, Utils.isEmpty);
   }
 
   handleBasic = async () => {

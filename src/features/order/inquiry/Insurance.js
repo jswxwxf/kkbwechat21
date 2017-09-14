@@ -41,7 +41,7 @@ export default class Insurance extends Component {
         <Navbar title="选择保险" backLink="上一步" />
         <List>
           <ListItem title="选择保险公司" className="lcb-border-bottom" />
-          <CompanyField companies={this.form.companies} />
+          <CompanyField companies={this.form.companies} state={this.form.companyId} />
         </List>
         <List>
           <RadioField color="red">

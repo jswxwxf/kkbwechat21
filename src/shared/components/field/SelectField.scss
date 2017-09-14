@@ -14,8 +14,11 @@
      }
    }
 
-   li:last-child:after {
+  li:last-child {
+    overflow: hidden;
+    &:after {
       @extend %lcb-field-border;
-   }
+    }
+  }
  
  }

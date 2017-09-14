@@ -2,8 +2,11 @@
 
 .lcb-model-field {
 
-  li:last-child:after {
-    @extend %lcb-field-border;
+  li:last-child {
+    overflow: hidden;
+    &:after {
+      @extend %lcb-field-border;
+    }
   }
   
 }

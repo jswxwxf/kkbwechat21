@@ -20,10 +20,21 @@ export default class PackageField extends Component {
     state: new PackageFieldForm({}).form
   }
 
+  container;
+
+  componentDidMount() {
+    const $container = window.Dom7(this.container);
+    $container.find('.smart-select').click(() => {
+      // setTimeout(() => $container.find('.item-divider').remove(), 0)
+      // this.props.state.validate();
+    });
+  }
+
+
   render() {
     const form = this.props.state;
     return (
-      <span className="lcb-package-field">
+      <span className="lcb-package-field" ref={r => this.container = r}>
         {this.props.state.hasError &&
           <ListItem title={this.props.state.error} divider />}
         <SelectField label="车辆损失险" state={form.$.destroy}>

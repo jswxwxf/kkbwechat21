@@ -31,12 +31,19 @@ export default class PickerField extends Component {
   states;
   values;
 
+  container;
+
   constructor(props, context) {
     super(props, context);
     this.state = {
       placeholder: this.props.placeholder
     }
     this._initCols();
+  }
+
+  componentDidMount() {
+    const $container = window.Dom7(this.container);
+    $container.find('input').attr('readonly', true);
   }
 
   _initCols() {
@@ -102,7 +109,7 @@ export default class PickerField extends Component {
     const { label } = this.props;
     const { placeholder } = this.state;
     return (
-      <span className="lcb-picker-field">
+      <span className="lcb-picker-field" ref={r => this.container = r}>
         <ListItem link="#">
           <FormLabel>{label}</FormLabel>
           <FormInput type="text" placeholder={placeholder}
