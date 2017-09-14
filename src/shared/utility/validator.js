@@ -11,6 +11,10 @@ const PASSWORD_REGEXP = /^[A-Z0-9]{6,20}$/i;
 const NAME_REGEXP = /^[\u4e00-\u9fa5]{2,20}/;
 const POSTAL_REGEXP = /^\d{6}$/;
 
+Validator.register('requiredNumber', function (value, requirement /* defaults to null */, attribute) {
+  return value > 0;
+}, '请输入正确的:attribute.');
+
 Validator.register('mobile', function (value, requirement /* defaults to null */, attribute) {
   return Validators.isMobile(value);
 }, ':attribute是9位数字.');

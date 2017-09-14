@@ -7,7 +7,7 @@ export default class EvalForm {
 
   city = new FieldState('').validators((val) => validate('城市', val, 'required'));
   carAge = new FieldState('').validators((val) => validate('车龄', val, 'required'));
-  carPrice = new FieldState('').validators((val) => validate('购置价', val, 'required'));
+  carPrice = new FieldState('').validators((val) => validate('购置价', val, 'required|requiredNumber'));
   claims = new FieldState('').validators((val) => validate('理赔次数', val, 'required'));
   
   form = new FormState({
