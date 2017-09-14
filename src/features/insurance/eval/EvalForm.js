@@ -28,9 +28,8 @@ export default class EvalForm {
 
   handleSubmit = async () => {
     const res = await this.form.validate();
-    if (res.hasError) return false;
+    if (res.hasError) return;
     insuranceActions.quickEval(this.toJson());
-    return true;
   };
 
 };

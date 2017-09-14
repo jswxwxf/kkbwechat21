@@ -33,12 +33,6 @@ export default class Eval extends Component {
     insuranceActions.getEvalOptions();
   }
 
-  componentDidUpdate() {
-    if (this.state.evalResult) {
-      this.dialog.show();
-    }
-  }
-
   render() {
     const { evalOptions, evalResult } = this.state;
     if (!evalOptions) return <Page />;
@@ -75,9 +69,9 @@ export default class Eval extends Component {
         <ContentBlock>
           <Button fill big text="试算" onClick={this.form.handleSubmit} />
         </ContentBlock>
-        <Dialog className="lcb-insurance-eval-result" ref={r => this.dialog = r}>
+        {evalResult && <Dialog id="insurance-eval-result">
           {d => <Result dialog={d} result={evalResult} />}
-        </Dialog>
+        </Dialog>}
       </Page>
     );
   }

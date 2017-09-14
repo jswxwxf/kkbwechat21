@@ -90,4 +90,8 @@ export default class UtilService {
     // this.alert(message, title);
   }
 
+  popup(popupId) {
+    this.f7App.popup(`#${popupId}`, true);
+  }
+
 }

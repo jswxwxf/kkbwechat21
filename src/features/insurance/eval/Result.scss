@@ -2,17 +2,13 @@
 
 #insurance-eval-result {
 
-}
-
-.lcb-insurance-eval-result + .popup {
-
   @include not-small-screen() {
     width: 90%;
-    height: 450px;
+    height: 430px;
     left: 50%;
     top: 50%;
     margin-left: -45%;
-    margin-top: -300px;
+    margin-top: -250px;
   }
 
   .navbar {
@@ -32,7 +28,6 @@
 
   .page-content {
     
-    padding-top: 44px;
     background-color: #30c34d;
 
     h2 {
@@ -86,6 +81,7 @@
     }
 
     .progressbar {
+      position: relative;
       height: 10px;
       border-radius: 5px;
       background: #eee;

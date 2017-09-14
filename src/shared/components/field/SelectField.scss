@@ -1,18 +1,18 @@
 @import '../../../styles/variables';
 
 .lcb-select-field {
-  
-   .item-divider {
-     // color: red;
-     text-align: center;
-     border-top: 1px solid red;
-     font-size: 14px;
-     background-color: white;
-     // font-weight: 200;
-     span {
-      line-height: 12px;
-     }
-   }
+
+  .item-divider {
+    // color: red;
+    text-align: center;
+    border-top: 1px solid red;
+    font-size: 14px;
+    background-color: white;
+    // font-weight: 200;
+    span {
+    line-height: 12px;
+    }
+  }
 
   li:last-child {
     overflow: hidden;

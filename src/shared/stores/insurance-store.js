@@ -33,6 +33,7 @@ export default class InsuranceStore extends Store {
     this.setState({
       evalResult: resp.data.data
     });
+    this.utilService.popup('insurance-eval-result');
   }
 
 }
