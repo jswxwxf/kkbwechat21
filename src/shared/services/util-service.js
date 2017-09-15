@@ -1,16 +1,12 @@
 import Config from 'config/config';
 import { Toast } from 'shared/components';
 
-import Dialogs from 'features/welcome/Dialogs';
-
 export default class UtilService {
 
   f7App;
 
   f7Context;
 
-  dialogs = Dialogs;
-  
   storeService;
 
   static _instance;

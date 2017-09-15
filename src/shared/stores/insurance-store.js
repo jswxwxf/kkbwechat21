@@ -1,6 +1,7 @@
 import { Store } from 'reflux';
 
 import { insuranceActions } from 'shared/actions';
+import { Dialogs } from 'shared/dialogs';
 
 import InsuranceState from './insurance-state';
 
@@ -27,7 +28,7 @@ export default class InsuranceStore extends Store {
   async onQuickEval(params) {
     this.utilService.showSpinner();
     let resp = await this.insuranceService.quickEval(params);
-    this.utilService.dialogs.evalDialog.show(resp.data.data);
+    Dialogs.evalDialog.show(resp.data.data);
   }
 
 }

@@ -1,6 +1,5 @@
 import Menu from './Menu';
 import MainViews from './MainViews';
-import Dialogs from './Dialogs';
 import Welcome from './Welcome';
 import Login from './Login';
 import Signup from './Signup';
@@ -13,4 +12,4 @@ const routes = [
   { path: '/forget', component: Forget }
 ]
 
-export { routes, Menu, MainViews, Dialogs };
+export { routes, Menu, MainViews };

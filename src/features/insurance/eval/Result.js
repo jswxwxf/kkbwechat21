@@ -13,7 +13,6 @@ import {
   Progressbar
 } from 'framework7-react';
 
-import { UtilService } from 'shared/services';
 import './Result.scss';
 
 export default class Result extends Component {
@@ -22,8 +21,6 @@ export default class Result extends Component {
     id: PropTypes.string.isRequired,
     result: PropTypes.object
   }
-
-  utilService = UtilService._instance;
 
   render() {
     const { result } = this.props;

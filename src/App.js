@@ -7,9 +7,10 @@ import { inject } from 'mobx-react';
 // import DevTools from 'mobx-react-devtools';
 
 import { withDI, Toast } from 'shared/components';
+import { Dialogs } from 'shared/dialogs';
 import { userActions } from 'shared/actions';
 
-import { routes as welcomeRoutes, Menu, MainViews, Dialogs } from './features/welcome';
+import { routes as welcomeRoutes, Menu, MainViews } from './features/welcome';
 import { routes as insuranceRoutes } from './features/insurance';
 import { routes as orderRoutes } from './features/order';
 import { routes as userRoutes } from './features/user';
@@ -28,6 +29,8 @@ class App extends Component {
 
   utilService = this.props.utilService;
 
+  dialogs;
+
   componentDidMount() {
     userActions.checkLogin();
     window.addEventListener('offline', () => {
@@ -39,14 +42,15 @@ class App extends Component {
   }
 
   handlePageAfterAnimation = (app, page) => {
-    app.sizeNavbars('.view-main')
+    app.sizeNavbars('.view-main');
+    setTimeout(() =>Dialogs.hideAll(), 0);
   }
 
   handleRouteChange = (route) => {
     this.utilService.hideSpinner();
-    this.utilService.dialogs.hideAll();
     this.utilService.rememberState(route);
   }
+
   render() {
     return (
       <Framework7App
