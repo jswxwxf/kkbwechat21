@@ -7,25 +7,27 @@ import {
   ContentBlock,
   Button,
 } from 'framework7-react';
-import { observer } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 
 import Header from 'features/welcome/Header';
 
-import { InputField, SelectField, Dialog } from 'shared/components';
+import { InputField, SelectField } from 'shared/components';
 import { insuranceActions } from 'shared/actions';
 import { InsuranceStore } from 'shared/stores';
 
-import Result from './Result';
 import EvalForm from './EvalForm';
 import './Eval.scss';
 
+@inject('utilService')
 @observer
 export default class Eval extends Component {
+
+  utilService = this.props.utilService;
 
   form = new EvalForm();
 
   store = InsuranceStore;
-  storeKeys = ['evalOptions', 'evalResult'];
+  storeKeys = ['evalOptions'];
   state = {};
 
   constructor(props, context) {
@@ -34,7 +36,7 @@ export default class Eval extends Component {
   }
 
   render() {
-    const { evalOptions, evalResult } = this.state;
+    const { evalOptions } = this.state;
     if (!evalOptions) return <Page />;
     return (
       <Page id="insurance-eval" fixedSlot={<Header title="保费试算" />}>
@@ -69,9 +71,6 @@ export default class Eval extends Component {
         <ContentBlock>
           <Button fill big text="试算" onClick={this.form.handleSubmit} />
         </ContentBlock>
-        {evalResult && <Dialog id="insurance-eval-result">
-          {d => <Result dialog={d} result={evalResult} />}
-        </Dialog>}
       </Page>
     );
   }

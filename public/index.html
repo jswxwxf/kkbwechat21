@@ -28,8 +28,6 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <span id="root"></span>
-    <div id="popups">
-    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -45,8 +43,7 @@
         reloadPage();
       }
       window.onhashchange = function(e) {
-        window.Dom7('body > .popup').remove();
-        window.Dom7('body > .popup-overlay').remove();
+        if (window.f7App) window.f7App.closeModal();
         reloadPage();
       }
 

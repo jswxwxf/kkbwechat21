@@ -17,9 +17,6 @@ export default class InsuranceStore extends Store {
   }
 
   async onGetEvalOptions() {
-    this.setState({ 
-      evalResult: null
-    });
     this.utilService.showSpinner();
     let resp = await this.insuranceService.getEvalOptions();
     this.setState({
@@ -30,10 +27,7 @@ export default class InsuranceStore extends Store {
   async onQuickEval(params) {
     this.utilService.showSpinner();
     let resp = await this.insuranceService.quickEval(params);
-    this.setState({
-      evalResult: resp.data.data
-    });
-    this.utilService.popup('insurance-eval-result');
+    this.utilService.dialogs.evalDialog.show(resp.data.data);
   }
 
 }

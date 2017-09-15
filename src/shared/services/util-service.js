@@ -1,12 +1,16 @@
 import Config from 'config/config';
 import { Toast } from 'shared/components';
 
+import Dialogs from 'features/welcome/Dialogs';
+
 export default class UtilService {
 
   f7App;
 
   f7Context;
 
+  dialogs = Dialogs;
+  
   storeService;
 
   static _instance;
@@ -88,10 +92,6 @@ export default class UtilService {
   toast(message, title = "开开保") {
     Toast.showToast(message);
     // this.alert(message, title);
-  }
-
-  popup(popupId) {
-    this.f7App.popup(`#${popupId}`, true);
   }
 
 }

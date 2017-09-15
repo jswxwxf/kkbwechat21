@@ -26,6 +26,7 @@ export default class MainViews extends Component {
     this.utilService.f7Context = this.context.framework7AppContext;
     this.context.framework7AppContext.getFramework7(f7App => {
       this.utilService.f7App = f7App;
+      window.f7App = f7App;
     });
   }
 

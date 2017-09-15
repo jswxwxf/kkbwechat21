@@ -9,7 +9,7 @@ import { inject } from 'mobx-react';
 import { withDI, Toast } from 'shared/components';
 import { userActions } from 'shared/actions';
 
-import { routes as welcomeRoutes, Menu, MainViews } from './features/welcome';
+import { routes as welcomeRoutes, Menu, MainViews, Dialogs } from './features/welcome';
 import { routes as insuranceRoutes } from './features/insurance';
 import { routes as orderRoutes } from './features/order';
 import { routes as userRoutes } from './features/user';
@@ -44,6 +44,7 @@ class App extends Component {
 
   handleRouteChange = (route) => {
     this.utilService.hideSpinner();
+    this.utilService.dialogs.hideAll();
     this.utilService.rememberState(route);
   }
   render() {
@@ -62,6 +63,7 @@ class App extends Component {
         <Menu />
         <MainViews />
         <Toast />
+        <Dialogs />
         {/* <DevTools /> */}
       </Framework7App>
     );
